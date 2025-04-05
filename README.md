@@ -1,2 +1,30 @@
-# 7boweb
-Página oficial del 7°B
+<body>
+    <header>
+        <h1>Página oficial del 7°B</h1>
+        <nav>
+            <ul>
+                <li><a href="#notas">Notas</a></li>
+                <li><a href="#noticias">Noticias</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="notas">
+            <h2>Notas</h2>
+            <p>Aquí se mostrarán todas las notas.</p>
+        </section>
+        <section id="noticias">
+            <h2>Noticias</h2>
+            <p>Aquí se mostrarán todas las noticias.</p>
+        </section>
+        <section id="eventos">
+            <h2>Eventos</h2>
+            <p>Aquí se mostrarán todos los eventos.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Curso 7°B 2025<p>
+    </footer>
+</body>
+
