@@ -102,19 +102,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    z-index: 1000; /* Asegura que el panel esté sobre las imágenes */
+    z-index: 1000;
 }
 
 .config-panel.open {
     display: flex;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
 }
 
 .panel-content {
@@ -124,27 +119,6 @@ body {
     text-align: center;
     max-width: 400px;
     width: 100%;
-    position: relative;
-    z-index: 1001;
-}
-
-/* Efecto de luz con gradiente y filtro blur */
-.panel-content:nth-child(2) {
-    --grad: linear-gradient(135deg, #03a9f4, #ff0058);
-}
-
-.panel-content:nth-child(3) {
-    --grad: linear-gradient(135deg, #4dff03, #00d0ff);
-}
-
-.panel-content::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: var(--grad);
-    filter: blur(0.75em);  /* Desenfoque */
-    border-radius: 15px;  /* Para que el gradiente se alinee con el panel */
 }
 
 #close-panel {
@@ -228,10 +202,6 @@ body {
     color: #ffd633;
 }
 
-.card#feedback {
-    color: #ff4f7d;
-}
-
 .contact-section {
     margin-top: 40px;
 }
@@ -279,126 +249,4 @@ body {
 
 .btn-submit:hover {
     background-color: #3384cc;
-}
-
-.alert {
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 16px;
-}
-
-.alert-success {
-    background-color: #4caf50;
-    color: white;
-}
-
-.alert-danger {
-    background-color: #f44336;
-    color: white;
-}
-
-/* Efecto de luz con gradiente para el panel de configuración */
-.config-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);  /* Fondo semitransparente */
-    display: none;  /* Oculto por defecto */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;  /* Asegurarse de que esté por encima de otros elementos */
-}
-
-.config-panel.open {
-    display: flex;  /* Mostrar el panel cuando se activa */
-}
-
-/* Efecto de luz */
-.config-panel .panel-content {
-    position: relative;
-    background: #1a1a33;
-    padding: 30px;
-    border-radius: 20px;
-    z-index: 2;
-    width: 400px;
-    text-align: center;
-}
-
-/* Efecto de luz con gradiente aplicado al borde */
-.config-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);  /* Fondo semitransparente */
-    display: none;  /* Oculto por defecto */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;  /* Asegurarse de que esté por encima de otros elementos */
-}
-
-.config-panel.open {
-    display: flex;  /* Mostrar el panel cuando se activa */
-}
-
-/* Panel de configuración */
-.config-panel .panel-content {
-    position: relative;
-    background: #1a1a33;
-    padding: 30px;
-    border-radius: 20px;
-    z-index: 2;
-    width: 400px;
-    text-align: center;
-    
-    /* Borde con gradiente */
-    border: 5px solid transparent; /* Borde transparente por defecto */
-    background-clip: padding-box;  /* Para que el fondo no se superponga al borde */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);  /* Sombras suaves */
-}
-
-.config-panel:nth-child(2) {
-    --list: #03a9f4, #ff0058;
-}
-
-.config-panel:nth-child(3) {
-    --list: #4dff03, #00d0ff;
-}
-
-/* Panel de configuración */
-.config-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);  /* Fondo semitransparente */
-    display: none;  /* Oculto por defecto */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;  /* Asegurarse de que esté por encima de otros elementos */
-}
-
-.config-panel.open {
-    display: flex;  /* Mostrar el panel cuando se activa */
-}
-
-/* Panel de contenido */
-.config-panel .panel-content {
-    position: relative;
-    background: #1a1a33;
-    padding: 30px;
-    border-radius: 20px;
-    width: 400px;
-    text-align: center;
-    
-    /* Bordes y luz gradiente */
-    border: 5px solid transparent; /* Borde invisible */
-    background-clip: padding-box;  /* Para que el fondo no se superponga al borde */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);  /* Sombras suaves */
 }
