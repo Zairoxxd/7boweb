@@ -3,83 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7°B Web</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Página Oficial del 7°B</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="logo">7°B</div>
-            <div class="nav">
-                <a href="#noticias"><i class="bi bi-newspaper"></i> Noticias</a>
-                <a href="#eventos"><i class="bi bi-calendar"></i> Eventos</a>
-                <a href="#notas"><i class="bi bi-clipboard-check"></i> Notas</a>
-            </div>
-        </div>
+    <header>
+        <h1>Página oficial del 7°B</h1>
+        <nav>
+            <ul>
+                <li><a href="#notas">Notas</a></li>
+                <li><a href="#noticias">Noticias</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#contactos">Contactos</a></li> <!-- Enlace al formulario de contacto -->
+            </ul>
+        </nav>
+    </header>
 
-        <div class="main-content">
-            <header>
-                <div class="header-left">
-                    <h2>Bienvenido al 7°B</h2>
-                </div>
-                <div class="header-right">
-                    <button id="config-icon"><i class="bi bi-gear"></i></button>
-                </div>
-            </header>
+    <main>
+        <section id="notas">
+            <h2>Notas</h2>
+            <p>Aquí se mostrarán todas las notas.</p>
+        </section>
+        <section id="noticias">
+            <h2>Noticias</h2>
+            <p>Aquí se mostrarán todas las noticias.</p>
+        </section>
+        <section id="eventos">
+            <h2>Eventos</h2>
+            <p>Aquí se mostrarán todos los eventos.</p>
+        </section>
 
-            <!-- Panel de Configuración -->
-            <div class="config-panel" id="config-panel">
-                <div class="panel-content">
-                    <h2>Configuración</h2>
-                    <p>Ajusta tus preferencias aquí.</p>
-                    <button id="close-panel">Cerrar</button>
-                </div>
-            </div>
+        <!-- Sección de Contactos -->
+        <section id="contactos">
+            <h2>Contacto</h2>
+            <p>Si tienes alguna duda o sugerencia, puedes contactarnos a través de este formulario:</p>
+            <form id="formulario-contacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-            <section class="photo-section">
-                <div class="photo-slot">
-                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Noticia">
-                    <p>Noticias</p>
-                </div>
-                <div class="photo-slot">
-                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Evento">
-                    <p>Eventos</p>
-                </div>
-                <div class="photo-slot">
-                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Notas">
-                    <p>Notas</p>
-                </div>
-            </section>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
 
-            <section class="cards">
-                <div class="card" id="noticias">
-                    <h3>Noticias</h3>
-                    <p>Últimas noticias del curso 7°B.</p>
-                </div>
-                <div class="card" id="eventos">
-                    <h3>Eventos</h3>
-                    <p>Próximos eventos importantes.</p>
-                </div>
-                <div class="card" id="notas">
-                    <h3>Notas</h3>
-                    <p>Consulta las notas de tus materias.</p>
-                </div>
-            </section>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-            <!-- Formulario de contacto -->
-            <section class="contact-section">
-                <h3>Contacto</h3>
-                <form action="mailto:holatenemoshambrexd@gmail.com" method="post" enctype="text/plain">
-                    <input type="text" id="name" name="name" placeholder="Nombre" required>
-                    <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
-                    <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </section>
-        </div>
-    </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="mensajeExito" style="display:none;">¡Mensaje enviado exitosamente!</div>
+            <div id="mensajeError" style="display:none;">Hubo un error al enviar el mensaje.</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Curso 7°B 2025</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
