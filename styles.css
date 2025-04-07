@@ -1,153 +1,404 @@
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #212121; /* Color de fondo más oscuro */
-    color: #e0e0e0; /* Texto claro para contraste */
-}
-
-/* Estilo del encabezado */
-header {
-    background-color: #263238; /* Color más oscuro para el encabezado */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d0d1a;
     color: white;
-    padding: 1rem;
-    text-align: center;
+    display: flex;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.container {
     display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 80px;
+    background-color: #0a0a1a;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .logo {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #4da6ff;
+}
+
+.sidebar .nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.sidebar .nav i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.sidebar .nav a:hover {
+    color: #4da6ff;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a0a1a;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.topbar .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar input {
+    background-color: #0d0d1a;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 20px;
+    width: 200px;
+}
+
+.topbar button {
+    background-color: #4da6ff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.topbar .right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar .config-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+.config-panel {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000; /* Asegura que el panel esté sobre las imágenes */
+}
+
+.config-panel.open {
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.panel-content {
+    background-color: #1a1a33;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    z-index: 1001;
+}
+
+/* Efecto de luz con gradiente y filtro blur */
+.panel-content:nth-child(2) {
+    --grad: linear-gradient(135deg, #03a9f4, #ff0058);
+}
+
+.panel-content:nth-child(3) {
+    --grad: linear-gradient(135deg, #4dff03, #00d0ff);
+}
+
+.panel-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--grad);
+    filter: blur(0.75em);  /* Desenfoque */
+    border-radius: 15px;  /* Para que el gradiente se alinee con el panel */
+}
+
+#close-panel {
+    background-color: #4da6ff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+#close-panel:hover {
+    background-color: #3384cc;
+}
+
+.photo-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.photo-slot {
+    position: relative;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.photo-slot:hover {
+    transform: scale(1.05);
+}
+
+.photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.photo-slot:hover img {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
     justify-content: center;
 }
 
-header nav ul li {
-    margin: 0 20px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: color 0.3s, transform 0.3s;
-}
-
-header nav ul li a:hover {
-    color: #f1f1f1;
-    transform: scale(1.1); /* Efecto de agrandamiento */
-}
-
-/* Secciones principales */
-section {
-    padding: 30px;
-    margin: 20px;
-    background-color: #37474f; /* Fondo oscuro para las secciones */
-    border-radius: 8px;
-    border: 1px solid #455a64; /* Borde más oscuro */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s;
-}
-
-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #f1f1f1;
-}
-
-section p {
-    font-size: 1.1rem;
-    color: #b0bec5; /* Color más suave para el texto */
-}
-
-/* Efecto de expansión para las secciones de Notas, Noticias y Eventos */
-#notas, #noticias, #eventos {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-#notas:hover, #noticias:hover, #eventos:hover {
-    transform: scale(1.05); /* Aumenta el tamaño de la sección al pasar el ratón */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más grande */
-}
-
-/* Sección de contacto sin animación de agrandamiento */
-#contactos {
-    /* No se aplica animación de agrandamiento aquí */
-}
-
-/* Estilos del formulario de contacto */
-form {
-    background: #263238; /* Fondo oscuro para el formulario */
-    border-radius: 8px;
+.card {
+    background-color: #1a1a33;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    margin: 0 auto;
-    color: #e0e0e0;
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+    border-radius: 15px;
+    flex: 1;
+    text-align: center;
+    transition: transform 0.2s;
+    width: 200px;
 }
 
-form label {
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card i {
+    font-size: 36px;
+    margin-bottom: 10px;
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #e0e0e0;
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 12px; /* Aumentar el padding para mayor espacio */
+.card#noticias {
+    color: #4da6ff;
+}
+
+.card#eventos {
+    color: #ffd633;
+}
+
+.card#feedback {
+    color: #ff4f7d;
+}
+
+.contact-section {
+    margin-top: 40px;
+}
+
+.contact-section h2 {
+    color: #4da6ff;
+}
+
+.form-group {
     margin-bottom: 15px;
-    border: 1px solid #455a64; /* Borde más oscuro */
-    border-radius: 4px;
-    background-color: #37474f; /* Fondo oscuro para los campos */
-    color: #e0e0e0;
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
 }
 
-form input:focus, form textarea:focus {
-    border-color: #90a4ae; /* Resaltar el borde cuando esté enfocado */
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #4da6ff;
 }
 
-form button {
-    width: 100%;
-    padding: 12px; /* Aumentar el padding para un botón más grande */
-    background-color: #4a4a88; /* Fondo más oscuro para el botón */
+.form-control {
+    width: 98%;
+    padding: 10px;
+    background-color: #1a1a33;
+    border: 1px solid #4da6ff;
     color: white;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #4da6ff;
+    outline: none;
+}
+
+.btn-submit {
+    background-color: #4da6ff;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
-}
-
-form button:hover {
-    background-color: #333; /* Cambiar el color del botón al pasar el ratón */
-}
-
-/* Mensajes de éxito/error */
-#mensajeExito, #mensajeError {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-}
-
-#mensajeExito {
-    background-color: #d4edda;
-    color: #155724;
-}
-
-#mensajeError {
-    background-color: #f8d7da;
-    color: #721c24;
-}
-
-/* Estilo del pie de página */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #263238;
+    padding: 12px 20px;
+    border-radius: 8px;
     color: white;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #3384cc;
+}
+
+.alert {
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.alert-success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Efecto de luz con gradiente para el panel de configuración */
+.config-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);  /* Fondo semitransparente */
+    display: none;  /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Asegurarse de que esté por encima de otros elementos */
+}
+
+.config-panel.open {
+    display: flex;  /* Mostrar el panel cuando se activa */
+}
+
+/* Efecto de luz */
+.config-panel .panel-content {
+    position: relative;
+    background: #1a1a33;
+    padding: 30px;
+    border-radius: 20px;
+    z-index: 2;
+    width: 400px;
+    text-align: center;
+}
+
+/* Efecto de luz con gradiente aplicado al borde */
+.config-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);  /* Fondo semitransparente */
+    display: none;  /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Asegurarse de que esté por encima de otros elementos */
+}
+
+.config-panel.open {
+    display: flex;  /* Mostrar el panel cuando se activa */
+}
+
+/* Panel de configuración */
+.config-panel .panel-content {
+    position: relative;
+    background: #1a1a33;
+    padding: 30px;
+    border-radius: 20px;
+    z-index: 2;
+    width: 400px;
+    text-align: center;
+    
+    /* Borde con gradiente */
+    border: 5px solid transparent; /* Borde transparente por defecto */
+    background-clip: padding-box;  /* Para que el fondo no se superponga al borde */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);  /* Sombras suaves */
+}
+
+.config-panel:nth-child(2) {
+    --list: #03a9f4, #ff0058;
+}
+
+.config-panel:nth-child(3) {
+    --list: #4dff03, #00d0ff;
+}
+
+/* Panel de configuración */
+.config-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);  /* Fondo semitransparente */
+    display: none;  /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Asegurarse de que esté por encima de otros elementos */
+}
+
+.config-panel.open {
+    display: flex;  /* Mostrar el panel cuando se activa */
+}
+
+/* Panel de contenido */
+.config-panel .panel-content {
+    position: relative;
+    background: #1a1a33;
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    
+    /* Bordes y luz gradiente */
+    border: 5px solid transparent; /* Borde invisible */
+    background-clip: padding-box;  /* Para que el fondo no se superponga al borde */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);  /* Sombras suaves */
 }
