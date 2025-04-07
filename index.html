@@ -1,100 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>7°B Web</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7°B Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="sidebar">
-      <div class="logo">7°B</div>
-      <div class="nav">
-        <a href="#noticias"><i class="bi bi-card-text"></i><span>Noticias</span></a>
-        <a href="#eventos"><i class="bi bi-calendar"></i><span>Eventos</span></a>
-        <a href="#notas"><i class="bi bi-card-checklist"></i><span>Notas</span></a>
-      </div>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">7°B</div>
+            <div class="nav">
+                <a href="#noticias"><i class="bi bi-card-text"></i><span>Noticias</span></a>
+                <a href="#eventos"><i class="bi bi-calendar"></i><span>Eventos</span></a>
+                <a href="#notas"><i class="bi bi-card-checklist"></i><span>Notas</span></a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="topbar">
+                <div class="left">
+                    <input type="text" placeholder="Buscar...">
+                    <button>Buscar</button>
+                </div>
+                <div class="right">
+                    <div class="config-icon" id="config-icon">
+                        <i class="bi bi-gear"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Configuración -->
+            <div class="config-panel" id="config-panel">
+                <div class="panel-content">
+                    <h2>Configuración</h2>
+                    <p>Ajusta la configuración aquí.</p>
+                    <button id="close-panel">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="photo-section">
+                <div class="photo-slot">
+                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Noticia" class="photo">
+                    <p>Noticias</p>
+                </div>
+                <div class="photo-slot">
+                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Evento" class="photo">
+                    <p>Eventos</p>
+                </div>
+                <div class="photo-slot">
+                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Notas" class="photo">
+                    <p>Notas</p>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="cards">
+                <div class="card" id="noticias">
+                    <i class="bi bi-card-text"></i>
+                    <h3>Noticias</h3>
+                    <p>Últimas noticias del curso 7°B.</p>
+                </div>
+                <div class="card" id="eventos">
+                    <i class="bi bi-calendar"></i>
+                    <h3>Eventos</h3>
+                    <p>Próximos eventos importantes.</p>
+                </div>
+                <div class="card" id="notas">
+                    <i class="bi bi-card-checklist"></i>
+                    <h3>Notas</h3>
+                    <p>Consulta las notas de tus materias.</P>
+                </div>
+            </div>
+
+            <!-- Formulario de contacto -->
+            <div class="contact-section">
+                <h2>Contacto</h2>
+                <form action="mailto:holatenemoshambrexd@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar</button>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <div class="main-content">
-      <div class="topbar">
-        <div class="left">
-          <input type="text" placeholder="Buscar..." />
-          <button>Buscar</button>
-        </div>
-        <div class="right">
-          <div class="config-icon" id="config-icon">
-            <i class="bi bi-gear"></i>
-          </div>
-          <div class="toggle-theme" id="toggle-theme">
-            <i class="bi bi-brightness-high"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="config-panel" id="config-panel">
-        <div class="panel-content">
-          <h2>Configuración</h2>
-          <p>Aquí puedes ajustar tu configuración.</p>
-          <button id="close-panel">Cerrar</button>
-        </div>
-      </div>
-
-      <div class="photo-section">
-        <div class="photo-slot">
-          <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Noticia" class="photo" />
-          <p>Noticias</p>
-        </div>
-        <div class="photo-slot">
-          <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Evento" class="photo" />
-          <p>Eventos</p>
-        </div>
-        <div class="photo-slot">
-          <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Notas" class="photo" />
-          <p>Notas</p>
-        </div>
-      </div>
-
-      <div class="cards">
-        <div class="card" id="noticias">
-          <i class="bi bi-card-text"></i>
-          <h3>Noticias</h3>
-          <p>Últimas noticias del curso 7°B.</p>
-        </div>
-        <div class="card" id="eventos">
-          <i class="bi bi-calendar"></i>
-          <h3>Eventos</h3>
-          <p>Próximos eventos importantes.</p>
-        </div>
-        <div class="card" id="notas">
-          <i class="bi bi-card-checklist"></i>
-          <h3>Notas</h3>
-          <p>Consulta las notas de tus materias.</p>
-        </div>
-      </div>
-
-      <div class="contact-section">
-        <h2>Contacto</h2>
-        <form action="mailto:holatenemoshambrexd@gmail.com" method="post" enctype="text/plain">
-          <div class="form-group">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" class="form-control" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" class="form-control" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Enviar</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
