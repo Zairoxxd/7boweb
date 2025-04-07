@@ -1,7 +1,8 @@
-document.getElementById('config-icon').addEventListener('click', function() {
-    document.getElementById('config-panel').classList.add('open');
-});
+function toggleConfigPanel() {
+    const configPanel = document.getElementById('configPanel');
+    configPanel.style.display = (configPanel.style.display === 'flex') ? 'none' : 'flex';
+}
 
-document.getElementById('close-panel').addEventListener('click', function() {
-    document.getElementById('config-panel').classList.remove('open');
-});
+function closeConfigPanel() {
+    document.getElementById('configPanel').style.display = 'none';
+}
