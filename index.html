@@ -6,14 +6,14 @@
     <title>7°B Web</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        /* Estilos CSS integrados en el HTML */
-
+        /* Estilos CSS integrados */
         body {
             font-family: Arial, sans-serif;
             background-color: #121212;
             color: white;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         .container {
@@ -22,6 +22,7 @@
             flex-direction: row;
         }
 
+        /* Sidebar */
         .sidebar {
             width: 250px;
             background-color: #1f1f1f;
@@ -59,11 +60,24 @@
             margin-right: 10px;
         }
 
+        /* Main content area */
         .main-content {
             margin-left: 270px;
             padding: 20px;
             overflow-y: auto;
             box-sizing: border-box;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topbar .left input,
+        .topbar .left button {
+            padding: 8px;
         }
 
         .photo-section {
@@ -89,6 +103,7 @@
             font-size: 18px;
         }
 
+        /* Cards */
         .cards {
             display: flex;
             justify-content: space-between;
@@ -162,7 +177,7 @@
             cursor: pointer;
         }
 
-        /* Escondiendo el panel de configuración por defecto */
+        /* Config Panel */
         .config-panel {
             display: none;
             background-color: #222;
@@ -197,7 +212,9 @@
             </div>
         </div>
 
+        <!-- Main Content -->
         <div class="main-content">
+            <!-- Topbar -->
             <div class="topbar">
                 <div class="left">
                     <input type="text" placeholder="Buscar...">
@@ -210,26 +227,18 @@
                 </div>
             </div>
 
-            <!-- Panel de Configuración -->
-            <div class="config-panel" id="config-panel">
-                <div class="panel-content">
-                    <h2>Configuración</h2>
-                    <p>Aquí puedes ajustar tu configuración.</p>
-                    <button id="close-panel">Cerrar</button>
-                </div>
-            </div>
-
+            <!-- Photo Section -->
             <div class="photo-section">
                 <div class="photo-slot">
-                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Noticia" class="photo">
+                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Noticia">
                     <p>Noticias</p>
                 </div>
                 <div class="photo-slot">
-                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Evento" class="photo">
+                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Evento">
                     <p>Eventos</p>
                 </div>
                 <div class="photo-slot">
-                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Notas" class="photo">
+                    <img src="https://i.imgur.com/nPv7hGt.jpeg" alt="Notas">
                     <p>Notas</p>
                 </div>
             </div>
@@ -249,25 +258,25 @@
                 <div class="card" id="notas">
                     <i class="bi bi-card-checklist"></i>
                     <h3>Notas</h3>
-                    <p>Consulta las notas de tus materias.</P>
+                    <p>Consulta las notas de tus materias.</p>
                 </div>
             </div>
 
-            <!-- Formulario de contacto -->
+            <!-- Contact Section -->
             <div class="contact-section">
                 <h2>Contacto</h2>
                 <form action="mailto:holatenemoshambrexd@gmail.com" method="post" enctype="text/plain">
                     <div class="form-group">
                         <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" class="form-control" required="">
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" class="form-control" required="">
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Mensaje:</label>
-                        <textarea id="message" name="message" class="form-control" rows="4" required=""></textarea>
+                        <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Enviar</button>
                 </form>
@@ -275,20 +284,10 @@
         </div>
     </div>
 
-    <!-- JavaScript integrado -->
     <script>
-        document.getElementById('config-icon').addEventListener('click', function() {
-            let panel = document.getElementById('config-panel');
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-
-        document.getElementById('close-panel').addEventListener('click', function() {
-            let panel = document.getElementById('config-panel');
-            panel.style.display = "none";
+        // Mostrar configuración al hacer clic en el ícono
+        document.getElementById('config-icon').addEventListener('click', function () {
+            alert('Panel de configuración no implementado aún');
         });
     </script>
 </body>
