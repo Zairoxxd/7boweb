@@ -1,3 +1,4 @@
+/* Fuente y reset básico */
 body {
     margin: 0;
     padding: 0;
@@ -164,4 +165,3 @@ body.light-mode textarea {
     background-color: #fff;
     color: #121212;
 }
-
