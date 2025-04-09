@@ -1,167 +1,153 @@
-/* Fuente y reset básico */
 body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #121212;
-    color: #f5f5f5;
+    background-color: #212121; /* Color de fondo más oscuro */
+    color: #e0e0e0; /* Texto claro para contraste */
 }
 
+/* Estilo del encabezado */
 header {
-    background-color: #1e1e1e;
-    padding: 20px;
+    background-color: #263238; /* Color más oscuro para el encabezado */
+    color: white;
+    padding: 1rem;
     text-align: center;
-    border-bottom: 2px solid #333;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
 }
 
-nav a {
-    color: #bb86fc;
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
     text-decoration: none;
+    font-size: 1.1rem;
     font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
 }
 
-nav a:hover {
-    text-decoration: underline;
+header nav ul li a:hover {
+    color: #f1f1f1;
+    transform: scale(1.1); /* Efecto de agrandamiento */
 }
 
-main {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
+/* Secciones principales */
 section {
-    margin-bottom: 50px;
+    padding: 30px;
+    margin: 20px;
+    background-color: #37474f; /* Fondo oscuro para las secciones */
+    border-radius: 8px;
+    border: 1px solid #455a64; /* Borde más oscuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
 }
 
-h2 {
-    color: #bb86fc;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #f1f1f1;
 }
 
+section p {
+    font-size: 1.1rem;
+    color: #b0bec5; /* Color más suave para el texto */
+}
+
+/* Efecto de expansión para las secciones de Notas, Noticias y Eventos */
+#notas, #noticias, #eventos {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#notas:hover, #noticias:hover, #eventos:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la sección al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más grande */
+}
+
+/* Sección de contacto sin animación de agrandamiento */
+#contactos {
+    /* No se aplica animación de agrandamiento aquí */
+}
+
+/* Estilos del formulario de contacto */
 form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: flex-start;
+    background: #263238; /* Fondo oscuro para el formulario */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: 0 auto;
+    color: #e0e0e0;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
 }
 
-input, textarea, button {
-    padding: 10px;
-    border-radius: 8px;
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px; /* Aumentar el padding para mayor espacio */
+    margin-bottom: 15px;
+    border: 1px solid #455a64; /* Borde más oscuro */
+    border-radius: 4px;
+    background-color: #37474f; /* Fondo oscuro para los campos */
+    color: #e0e0e0;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+}
+
+form input:focus, form textarea:focus {
+    border-color: #90a4ae; /* Resaltar el borde cuando esté enfocado */
+}
+
+form button {
+    width: 100%;
+    padding: 12px; /* Aumentar el padding para un botón más grande */
+    background-color: #4a4a88; /* Fondo más oscuro para el botón */
+    color: white;
     border: none;
-    outline: none;
-}
-
-input, textarea {
-    background-color: #1e1e1e;
-    color: #fff;
-    border: 1px solid #333;
-}
-
-button {
-    background-color: #bb86fc;
-    color: #000;
+    border-radius: 4px;
     cursor: pointer;
-    transition: 0.3s;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
 }
 
-button:hover {
-    background-color: #9c64db;
+form button:hover {
+    background-color: #333; /* Cambiar el color del botón al pasar el ratón */
 }
 
-/* Configuración */
-.config-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #bb86fc;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    cursor: pointer;
-    z-index: 999;
-    transition: transform 0.3s ease;
-}
-.config-button:hover {
-    transform: rotate(30deg);
-}
-
-.config-menu {
-    position: fixed;
-    bottom: 100px;
-    right: 20px;
-    background-color: #1e1e1e;
-    padding: 15px;
-    border-radius: 10px;
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 999;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.config-menu h3 {
-    margin-top: 0;
-}
-
-/* Mensajes */
-.mensaje-exito, .mensaje-error {
-    margin-top: 10px;
+/* Mensajes de éxito/error */
+#mensajeExito, #mensajeError {
+    text-align: center;
+    margin-top: 20px;
     padding: 10px;
-    border-radius: 8px;
-    display: none;
-}
-.mensaje-exito {
-    background-color: #4caf50;
-    color: white;
-}
-.mensaje-error {
-    background-color: #f44336;
-    color: white;
+    background-color: #f8f9fa;
+    border-radius: 5px;
 }
 
-/* Footer */
+#mensajeExito {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+#mensajeError {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Estilo del pie de página */
 footer {
     text-align: center;
-    padding: 20px;
-    border-top: 2px solid #333;
-    background-color: #1e1e1e;
-    margin-top: 40px;
-}
-
-/* Modo claro */
-body.light-mode {
-    background-color: #f4f4f4;
-    color: #121212;
-}
-body.light-mode header,
-body.light-mode footer,
-body.light-mode .config-menu {
-    background-color: #e0e0e0;
-    color: #121212;
-}
-body.light-mode input,
-body.light-mode textarea {
-    background-color: #fff;
-    color: #121212;
+    padding: 10px;
+    background-color: #263238;
+    color: white;
 }
