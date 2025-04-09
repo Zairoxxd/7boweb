@@ -1,58 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página oficial del 7°B</title>
+    <link rel="stylesheet" href="estilos.css" />
+</head>
 <body>
-  <header>
-    <h1>Página oficial del 7°B</h1>
-    <nav>
-      <ul>
-        <li><a href="#notas">Notas</a></li>
-        <li><a href="#noticias">Noticias</a></li>
-        <li><a href="#eventos">Eventos</a></li>
-        <li><a href="#contactos">Contactos</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Página oficial del 7°B</h1>
+        <nav>
+            <ul>
+                <li><a href="#notas">Notas</a></li>
+                <li><a href="#noticias">Noticias</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section id="notas">
-      <h2>Notas</h2>
-      <p>Aquí se mostrarán todas las notas.</p>
-    </section>
+    <main>
+        <section id="notas">
+            <h2>Notas</h2>
+            <p>Aquí se mostrarán todas las notas.</p>
+        </section>
 
-    <section id="noticias">
-      <h2>Noticias</h2>
-      <p>Aquí se mostrarán todas las noticias.</p>
-    </section>
+        <section id="noticias">
+            <h2>Noticias</h2>
+            <p>Aquí se mostrarán todas las noticias.</p>
+        </section>
 
-    <section id="eventos">
-      <h2>Eventos</h2>
-      <p>Aquí se mostrarán todos los eventos.</p>
-    </section>
+        <section id="eventos">
+            <h2>Eventos</h2>
+            <p>Aquí se mostrarán todos los eventos.</p>
+        </section>
 
-    <!-- Sección de Contactos -->
-    <section id="contactos">
-      <h2>Contacto</h2>
-      <p>Si tienes alguna duda o sugerencia, puedes contactarnos a través de este formulario:</p>
-      <form id="formulario-contacto">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <section id="contactos">
+            <h2>Contacto</h2>
+            <p>Si tienes alguna duda o sugerencia, puedes contactarnos a través de este formulario:</p>
+            <form id="formulario-contacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
 
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-        <button type="submit">Enviar</button>
-      </form>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="mensajeExito" class="mensaje-exito">¡Mensaje enviado exitosamente!</div>
+            <div id="mensajeError" class="mensaje-error">Hubo un error al enviar el mensaje.</div>
+        </section>
+    </main>
 
-      <div id="mensajeExito" style="display:none;">¡Mensaje enviado exitosamente!</div>
-      <div id="mensajeError" style="display:none;">Hubo un error al enviar el mensaje.</div>
-    </section>
-  </main>
+    <footer>
+        <p>Curso 7°B 2025</p>
+    </footer>
 
-  <footer>
-    <p>Curso 7°B 2025</p>
-  </footer>
+    <!-- Botón de configuración flotante -->
+    <div class="config-button" onclick="toggleConfigMenu()">
+        <i class="gear-icon">⚙️</i>
+    </div>
 
-  <script src="script.js"></script>
-  <div id="my-app"></div>
+    <!-- Menú de configuración -->
+    <div class="config-menu" id="configMenu">
+        <h3>Configuración</h3>
+        <button onclick="activarModoOscuro()">Modo oscuro</button>
+        <button onclick="activarModoClaro()">Modo claro</button>
+        <button onclick="activarTroll()">CP Gratis 😈</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+</html>
